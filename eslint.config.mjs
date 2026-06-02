@@ -4,12 +4,12 @@ import stylisticJs from '@stylistic/eslint-plugin'
 export default [
   js.configs.recommended,
     { 
-    ignores: ['dist/**'], 
+    ignores: ['dist/**','e2e0','tests'], 
   },
   {
     files: ['**/*.js'],
     languageOptions: {
-      sourceType: 'commonjs',
+      sourceType: 'module',
       globals: { ...globals.node },
       ecmaVersion: 'latest',
     },

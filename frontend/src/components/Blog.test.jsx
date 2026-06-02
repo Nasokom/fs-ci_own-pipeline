@@ -20,8 +20,10 @@ describe('Testing <Blog/> default render', () => {
 
     render(<Blog blog={dummy} />)
 
-    const element = await screen.findByText(dummy.title +' '+ dummy.author,{ exact:false })
+    const element = await screen.findByText(dummy.title ,{ exact:false })
+    const elementAuthor = await screen.findByText(dummy.author ,{ exact:false })
     expect(element).toBeDefined()
+    expect(elementAuthor).toBeDefined()
   })
 
 
