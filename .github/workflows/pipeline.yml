@@ -23,9 +23,19 @@ jobs:
             - name: install server dependencies 
               run: npm ci
             - name: test server 
+              env:
+               TEST_MONGODB_URI: ${{ secrets.TEST_MONGODB_URI }}
+               SECRET: ${{ secrets.SECRET }}
+               PORT: ${{ secrets.PORT }}
+
               run: npm run test:server
             - name: Install playwright browser
               run: npx playwright install --with-deps
             - name: run playwright test 
+              env:
+               TEST_MONGODB_URI: ${{ secrets.TEST_MONGODB_URI }}
+               SECRET: ${{ secrets.SECRET }}
+               PORT: ${{ secrets.PORT }}
+               
               run: npm run test 
 
