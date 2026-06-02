@@ -17,7 +17,7 @@ jobs:
             - name: install frontdep
               run: cd frontend && npm i
             - name: test frontend
-              run: npm run test
+              run: cd frontend && npm run test
             - name: prod build frontend
               run: npm run build
             - name: install server dependencies 
