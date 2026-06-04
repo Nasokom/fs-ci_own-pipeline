@@ -11,6 +11,9 @@ const testingRouter = require('./controllers/testing')
 mongoose.connect(mongoUrl, { family: 4 })
 
 app.use(express.static('frontend/dist'))
+app.get('/health',(_request,res) => {
+  res.send('ok')
+})
 
 app.use(express.json())
 app.use(middleware.tokenExtractor)
